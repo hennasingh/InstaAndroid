@@ -20,16 +20,73 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/instagram"
-        android:contentDescription="@string/instagram_login"
-        android:background="@android:color/transparent"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="23dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="23dp"
+            android:paddingBottom="23dp">
+
+            <TextView
+                android:id="@+id/signInTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Sign In"
+                android:gravity="center_horizontal"
+                android:textSize="26sp"
+                android:textColor="#1c1c1c"/>
+
+            <RelativeLayout
+                android:id="@+id/sign_in_button"
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/sign_in_round_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signInTitle">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/instagram"
+                    android:contentDescription="@string/instagram_login"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@+id/logo"
+                    android:textSize="14sp"
+                    android:fontFamily="casual"
+                    android:textColor="#4527A0"/>
+
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
