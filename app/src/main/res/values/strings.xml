@@ -2,4 +2,5 @@
     <string name="app_name">InstaAndroid</string>
     <string name="instagram_login">Instagram Login Image Button</string>
     <string name="login">Login with Instagram</string>
+    <string name="signIn">Sign In</string>
 </resources>
