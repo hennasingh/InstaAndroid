@@ -9,8 +9,6 @@ import java.util.List;
 
 public class MediaDetails {
 
-    @SerializedName("caption")
-    private Caption caption;
 
     @SerializedName("likes")
     private Likes likes;
@@ -24,6 +22,4 @@ public class MediaDetails {
     @SerializedName("images")
     private Images images;
 
-    @SerializedName("videos")
-    private Videos videos;
 }
