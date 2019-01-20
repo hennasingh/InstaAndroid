@@ -1,5 +1,6 @@
 package com.coder.instaandroid.network;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +9,9 @@ import android.util.Log;
 
 import com.coder.instaandroid.InstaApplication;
 import com.coder.instaandroid.R;
+import com.coder.instaandroid.model.ApiResponse;
 import com.coder.instaandroid.model.TokenResponse;
+import com.coder.instaandroid.model.User;
 import com.coder.instaandroid.utils.Constants;
 
 import retrofit2.Call;
@@ -20,6 +23,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class WebRepository {
 
     private static volatile WebRepository sWebRepository;
+
+    private MutableLiveData<User> mUserDataObservable = new MutableLiveData<>();
 
     private WebRepository(){}
 
@@ -60,6 +65,24 @@ public class WebRepository {
 
                     }
                 });
+    }
+
+    public void getUserProfileData(String token){
+
+        InstaApplication.sApiManager.getUserProfile(token, new Callback<ApiResponse>() {
+            @Override
+            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+
+                if(response.isSuccessful()){
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse> call, Throwable t) {
+
+            }
+        });
     }
 
   }

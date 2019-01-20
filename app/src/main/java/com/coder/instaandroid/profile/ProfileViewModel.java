@@ -20,4 +20,9 @@ public class ProfileViewModel extends AndroidViewModel {
 
         InstaApplication.sWebRepository.fetchAccessToken(code,mApplication.getApplicationContext());
     }
+
+    public void getUserDetails(String accessToken){
+        InstaApplication.sWebRepository.getUserProfileData(accessToken);
+
+    }
 }

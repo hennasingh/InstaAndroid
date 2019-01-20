@@ -5,4 +5,6 @@
     <string name="signIn">Sign In</string>
     <string name="preference_file">ImagePeek</string>
     <string name ="token_key">Token</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>
