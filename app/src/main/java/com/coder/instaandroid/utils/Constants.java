@@ -11,7 +11,7 @@ public class Constants {
 
 
     public static final String REQUEST_URL = BASE_URL
-                                        + "oauth/authorize/?client_id="
+                                        + "/oauth/authorize/?client_id="
                                         + CLIENT_ID
                                         + "&redirect_uri="
                                         +  REDIRECT_URI

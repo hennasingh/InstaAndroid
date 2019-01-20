@@ -21,10 +21,6 @@ public class LoginViewModel extends AndroidViewModel {
         return hasToken;
     }
 
-    public void getUserDetails(){
-
-    }
-
 
 
 }

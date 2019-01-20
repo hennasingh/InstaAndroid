@@ -3,6 +3,7 @@ package com.coder.instaandroid.network;
 import com.coder.instaandroid.model.ApiResponse;
 import com.coder.instaandroid.model.MediaDetails;
 import com.coder.instaandroid.model.MediaResponse;
+import com.coder.instaandroid.model.TokenResponse;
 import com.coder.instaandroid.utils.Constants;
 
 import butterknife.internal.Utils;
@@ -47,5 +48,12 @@ public class ApiManager {
     public void getUserMedia(String accessToken, Callback<MediaResponse> callback){
         Call<MediaResponse> instaMediaResponse = sApiCall.getUserMedia(accessToken);
         instaMediaResponse.enqueue(callback);
+    }
+
+    public void getAccessToken(String clientId, String clientSecret, String grantType,
+                               String redirectUri, String code, Callback<TokenResponse> callback){
+        Call<TokenResponse> tokenResponse = sApiCall.getAccessToken(clientId,clientSecret,redirectUri,
+                grantType,code);
+        tokenResponse.enqueue(callback);
     }
 }
