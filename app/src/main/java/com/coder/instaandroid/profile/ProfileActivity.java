@@ -3,10 +3,12 @@ package com.coder.instaandroid.profile;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -89,9 +91,10 @@ public class ProfileActivity extends AppCompatActivity {
         if(!token.isEmpty()){
 
             mProfileViewModel.getUserDetails(token);
-            observerUserData();
-            observeUserMedia();
         }
+
+        observerUserData();
+        observeUserMedia();
 
     }
 
@@ -108,6 +111,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_logout)
     public void logOut(View view){
+        deleteUser();
+    }
+
+    private void deleteUser() {
         SharedPreferences.Editor sharedPref = getSharedPreferences(getString(R.string.preference_file),MODE_PRIVATE).edit();
         sharedPref.clear().apply();
         finish();
@@ -177,4 +184,35 @@ public class ProfileActivity extends AppCompatActivity {
         super.onDestroy();
         mUnbinder.unbind();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder alertDialog= new AlertDialog.Builder(this);
+
+        alertDialog.setMessage(R.string.alert_message);
+        alertDialog.setTitle(R.string.alert_title);
+        alertDialog.setIcon(R.drawable.ic_warning);
+
+        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteUser();
+
+            }
+        });
+
+        alertDialog.show();
+
+
+    }
+
+
 }

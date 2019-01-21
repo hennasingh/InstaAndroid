@@ -9,4 +9,6 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="logout">Logout</string>
     <string name="user_media">Media from user feed</string>
+    <string name="alert_message">You will be Logged out of account if you go back</string>
+    <string name="alert_title">Do you want to Logout?</string>
 </resources>

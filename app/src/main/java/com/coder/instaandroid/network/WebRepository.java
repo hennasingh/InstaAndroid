@@ -68,6 +68,7 @@ public class WebRepository {
                                 sharedPref.putString(context.getString(R.string.token_key),
                                         response.body().getAccessToken()).apply();
                                 Log.d("WebRepo Class", " "+response.body().getAccessToken());
+                                getUserProfileData(response.body().getAccessToken());
                             }
                         }
                     }
