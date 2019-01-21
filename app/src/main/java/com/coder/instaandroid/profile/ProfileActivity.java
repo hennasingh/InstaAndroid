@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,16 +15,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.coder.instaandroid.R;
 import com.coder.instaandroid.model.MediaDetails;
 import com.coder.instaandroid.model.User;
-import com.coder.instaandroid.utils.Constants;
 import com.coder.instaandroid.utils.ResultDisplay;
 import com.squareup.picasso.Picasso;
 
@@ -113,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_logout)
-    public void logOut(View view){
+    public void logout(View view){
         deleteUser();
     }
 
@@ -121,7 +116,7 @@ public class ProfileActivity extends AppCompatActivity {
         SharedPreferences.Editor sharedPref = getSharedPreferences(getString(R.string.preference_file),MODE_PRIVATE).edit();
         sharedPref.clear().apply();
 
-        finish();
+       finish();
     }
 
     private void observeUserMedia() {
@@ -149,7 +144,9 @@ public class ProfileActivity extends AppCompatActivity {
                         mMediaAdapter.setImages(listResultDisplay.data);
 
                 }
+                mProfileViewModel.getMediaDetails().removeObserver(this);
             }
+
         });
     }
 
@@ -159,7 +156,9 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable User user) {
                 if(user!=null) setUpUI(user);
+                mProfileViewModel.getUserProfile().removeObserver(this);
             }
+
         });
 
     }
