@@ -6,3 +6,9 @@ You will need to register your app [here](https://www.instagram.com/developer/) 
 CLIENT_ID = "your id"
 CLIENT_SECRET = "your secret"
 ```
+
+Use Chrome browser when app prompts to open Instagram.
+
+To implement more features
+- [ ] Using Instagram Graph API
+- [ ] Using WebView
