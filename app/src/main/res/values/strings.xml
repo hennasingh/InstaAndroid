@@ -11,4 +11,10 @@
     <string name="user_media">Media from user feed</string>
     <string name="alert_message">You will be Logged out of account if you go back</string>
     <string name="alert_title">Do you want to Logout?</string>
+    <string name="backdrop_description">background collage of images</string>
+    <string name="placeholder_name">Henna Singh</string>
+    <string name="placeholder_posts">203</string>
+    <string name="placeholder_followers">130</string>
+    <string name="placeholder_follows">140</string>
+    <string name="placeholder_errorMsg">No Internet Connection</string>
 </resources>

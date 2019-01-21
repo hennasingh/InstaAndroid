@@ -14,19 +14,19 @@
         android:id="@+id/user_profile_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:background="#ffeeff">
+        android:padding="@dimen/dimen_4dp"
+        android:background="@color/light_pink">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/dimen_96"
+        android:layout_height="@dimen/dimen_96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
         android:src="@drawable/login_graphic"
-        android:elevation="8dp"
+        android:elevation="@dimen/dimen_8"
         app:civ_border_width="1dp"
         app:civ_border_color="#FFF" />
 
@@ -34,13 +34,13 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:textSize="@dimen/text_16"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="@id/profile_image"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
         app:layout_constraintEnd_toEndOf="@id/profile_image"
-        tools:text="Henna Singh"/>
+        tools:text="@string/placeholder_name"/>
 
     <TextView
         android:id="@+id/tv_posts"
@@ -48,12 +48,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/profile_image"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
-        tools:text="203"
+        android:layout_marginTop="@dimen/dimen_40"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        tools:text="@string/placeholder_posts"
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/ic_posts"
-        android:drawablePadding="4dp"/>
+        android:drawablePadding="@dimen/dimen_4dp"/>
 
     <TextView
         android:id="@+id/tv_followers"
@@ -63,9 +63,9 @@
         app:layout_constraintStart_toEndOf="@id/tv_posts"
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/followers"
-        android:drawablePadding="4dp"
-        android:layout_marginStart="10dp"
-        tools:text="130"/>
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        tools:text="@string/placeholder_followers"/>
 
     <TextView
         android:id="@+id/tv_following"
@@ -75,18 +75,19 @@
         app:layout_constraintStart_toEndOf="@id/tv_followers"
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/following"
-        android:drawablePadding="4dp"
-        android:layout_marginStart="10dp"
-        tools:text="140"/>
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        tools:text="@string/placeholder_follows"/>
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/logout"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/sign_in_round_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_followers"
@@ -114,8 +115,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
-            android:textSize="28sp"
-            tools:text="No Internet Connection"/>
+            android:textSize="@dimen/text_28"
+            tools:text="@string/placeholder_errorMsg"/>
 
         <ProgressBar
             android:id="@+id/loading_bar"

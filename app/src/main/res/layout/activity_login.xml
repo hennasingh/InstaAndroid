@@ -11,11 +11,12 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:scaleType="centerCrop"
+      android:contentDescription="@string/backdrop_description"
       android:src="@drawable/login_graphic"/>
 
   <View
       android:layout_width="match_parent"
-      android:layout_height="160dp"
+      android:layout_height="@dimen/dimen_160"
       android:background="@drawable/sign_in_gradient"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -23,21 +24,22 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="23dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_23"
+        android:layout_marginEnd="@dimen/dimen_23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="23dp"
-        app:cardCornerRadius="5dp"
+        android:layout_marginBottom="@dimen/dimen_23"
+        app:cardCornerRadius="@dimen/dimen_4dp"
         app:cardElevation="2dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="23dp"
-            android:paddingBottom="23dp">
+            android:paddingTop="@dimen/dimen_23"
+            android:background="@color/light_pink"
+            android:paddingBottom="@dimen/dimen_23">
 
             <TextView
                 android:id="@+id/signInTitle"
@@ -45,16 +47,17 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 android:text="@string/signIn"
                 android:gravity="center_horizontal"
-                android:textSize="26sp"
-                android:textColor="#1c1c1c"/>
+                android:textSize="@dimen/text_26"
+                android:textColor="@color/greyish_black"/>
 
             <RelativeLayout
                 android:id="@+id/sign_in_button"
-                android:layout_width="220dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="@dimen/dimen_220"
+                android:layout_height="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_15"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -65,8 +68,8 @@
 
                 <ImageView
                     android:id="@+id/logo"
-                    android:layout_width="60dp"
-                    android:layout_height="80dp"
+                    android:layout_width="@dimen/dimen_60"
+                    android:layout_height="@dimen/dimen_80"
                     android:src="@drawable/instagram"
                     android:contentDescription="@string/instagram_login"
                     android:layout_centerVertical="true"/>
@@ -77,12 +80,11 @@
                     android:text="@string/login"
                     android:layout_centerInParent="true"
                     android:layout_toEndOf="@+id/logo"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/text_14"
                     android:fontFamily="casual"
-                    android:textColor="#4527A0"/>
+                    android:textColor="@color/colorPrimaryDark"/>
 
             </RelativeLayout>
-
 
         </android.support.constraint.ConstraintLayout>
 

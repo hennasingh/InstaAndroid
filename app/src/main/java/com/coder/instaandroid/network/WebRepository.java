@@ -100,6 +100,7 @@ public class WebRepository {
             public void onFailure(Call<ApiResponse> call, Throwable t) {
 
                 Log.d(TAG, "HTTP profile request failed");
+
             }
         });
     }
