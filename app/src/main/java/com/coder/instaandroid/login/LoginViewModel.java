@@ -10,7 +10,7 @@ import com.coder.instaandroid.network.WebRepository;
 
 public class LoginViewModel extends AndroidViewModel {
 
-    private Boolean hasToken= false;
+    private Boolean hasToken;
 
     public LoginViewModel(@NonNull Application application) {
         super(application);

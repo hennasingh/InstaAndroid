@@ -1,25 +1,27 @@
 package com.coder.instaandroid.model;
 
-import android.location.Location;
-
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 public class MediaDetails {
 
+    @SerializedName("comments")
+    private Comments mComments;
 
     @SerializedName("likes")
-    private Likes likes;
-
-    @SerializedName("link")
-    private String link;
-
-    @SerializedName("created_time")
-    private String createdTime;
+    private Likes mlikes;
 
     @SerializedName("images")
     private Images images;
 
+    public Comments getComments() {
+        return mComments;
+    }
+
+    public Likes getLikes() {
+        return mlikes;
+    }
+
+    public Images getImages() {
+        return images;
+    }
 }

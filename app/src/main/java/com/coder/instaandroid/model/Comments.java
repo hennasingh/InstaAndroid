@@ -2,7 +2,7 @@ package com.coder.instaandroid.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Likes {
+public class Comments {
 
     @SerializedName("count")
     private int mCount;

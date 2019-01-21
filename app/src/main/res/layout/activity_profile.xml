@@ -16,8 +16,19 @@
         android:layout_marginTop="20dp"
         android:src="@drawable/login_graphic"
         android:elevation="8dp"
-        app:border_width="2dp"
-        app:border_color="#FFF" />
+        app:civ_border_width="1dp"
+        app:civ_border_color="#FFF" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/profile_image"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintEnd_toEndOf="@id/profile_image"
+        tools:text="Henna Singh"/>
 
     <TextView
         android:id="@+id/tv_posts"
@@ -25,8 +36,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/profile_image"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
         tools:text="203"
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/ic_posts"
@@ -41,7 +52,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/followers"
         android:drawablePadding="4dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         tools:text="130"/>
 
     <TextView
@@ -53,17 +64,17 @@
         android:textColor="@color/colorPrimaryDark"
         android:drawableEnd="@drawable/following"
         android:drawablePadding="4dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         tools:text="140"/>
 
     <Button
-        android:id="@+id/ib_logout"
+        android:id="@+id/btn_logout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/logout"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_followers"
         app:layout_constraintStart_toEndOf="@id/profile_image"/>
@@ -81,6 +92,7 @@
         android:id="@+id/rv_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
