@@ -93,6 +93,8 @@ public class WebRepository {
                     }else{
                         mUserDataObservable.postValue(null);
                     }
+                }else{
+                    Log.d(TAG," "+response.message());
                 }
             }
 

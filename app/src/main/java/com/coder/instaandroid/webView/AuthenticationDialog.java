@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -35,6 +37,10 @@ public class AuthenticationDialog extends Dialog {
         setContentView(R.layout.auth_dialog);
         ButterKnife.bind(this);
         setUpWebView(mWebView);
+
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.removeSessionCookies(null);
+        cookieManager.flush();
     }
 
     private void setUpWebView(WebView webView){

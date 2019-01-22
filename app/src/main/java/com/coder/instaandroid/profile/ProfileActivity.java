@@ -86,15 +86,15 @@ public class ProfileActivity extends AppCompatActivity {
         if(extras!=null){
             String token = extras.getString(TOKEN);
             mProfileViewModel.getAccessToken(token);
+        }else {
+
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file), MODE_PRIVATE);
+            String token = sharedPref.getString(getString(R.string.token_key), "");
+            if (!token.isEmpty()) {
+
+                mProfileViewModel.getUserDetails(token);
+            }
         }
-
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file),MODE_PRIVATE);
-        String token = sharedPref.getString(getString(R.string.token_key),"");
-        if(!token.isEmpty()){
-
-            mProfileViewModel.getUserDetails(token);
-        }
-
         observerUserData();
         observeUserMedia();
 
