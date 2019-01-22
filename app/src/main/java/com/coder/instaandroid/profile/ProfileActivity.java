@@ -34,6 +34,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    private static final String TOKEN ="access_token";
+
     ProfileViewModel mProfileViewModel;
 
     @BindView(R.id.profile_image)
@@ -175,6 +177,12 @@ public class ProfileActivity extends AppCompatActivity {
         mMediaCount.setText(String.valueOf(user.getCounts().getMediaCount()));
         mFollowerCount.setText(String.valueOf(user.getCounts().getFollowedBy()));
         mFollowingCount.setText(String.valueOf(user.getCounts().getFollows()));
+    }
+
+    public static Intent getIntent(Context context, String token){
+        Intent intent = new Intent(context, ProfileActivity.class);
+        intent.putExtra(TOKEN, token);
+        return intent;
     }
 
     public static Intent getIntent(Context context){

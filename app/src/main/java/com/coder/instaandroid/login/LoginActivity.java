@@ -1,6 +1,7 @@
 package com.coder.instaandroid.login;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +11,17 @@ import android.view.View;
 import com.coder.instaandroid.R;
 import com.coder.instaandroid.profile.ProfileActivity;
 import com.coder.instaandroid.utils.Constants;
+import com.coder.instaandroid.webView.AuthenticationDialog;
+import com.coder.instaandroid.webView.AuthenticationListener;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements AuthenticationListener {
 
     LoginViewModel mLoginViewModel;
+    AuthenticationDialog mAuthenticationDialog;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +39,17 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.sign_in_button)
     public void signIn(View view){
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.REQUEST_URL));
-        startActivity(intent);
+
+        mAuthenticationDialog = new AuthenticationDialog(this,this);
+        mAuthenticationDialog.show();
     }
 
+    @Override
+    public void onTokenReceived(String accessToken) {
+
+        if(accessToken!=null){
+            mAuthenticationDialog.dismiss();
+
+        }
+    }
 }
