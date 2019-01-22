@@ -15,6 +15,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -120,7 +122,14 @@ public class ProfileActivity extends AppCompatActivity {
         SharedPreferences.Editor sharedPref = getSharedPreferences(getString(R.string.preference_file),MODE_PRIVATE).edit();
         sharedPref.clear().apply();
 
-       finish();
+        CookieManager cookieManager = CookieManager.getInstance();
+        CookieSyncManager cookieSyncManager = CookieSyncManager.createInstance(ProfileActivity.this);
+        cookieSyncManager.startSync();
+        CookieManager.getInstance().removeAllCookie();
+        cookieSyncManager.stopSync();
+        cookieManager.removeSessionCookie();
+
+        finish();
     }
 
     private void observeUserMedia() {

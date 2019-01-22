@@ -38,9 +38,6 @@ public class AuthenticationDialog extends Dialog {
         ButterKnife.bind(this);
         setUpWebView(mWebView);
 
-        CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.removeSessionCookies(null);
-        cookieManager.flush();
     }
 
     private void setUpWebView(WebView webView){
