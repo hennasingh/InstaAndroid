@@ -80,10 +80,12 @@ public class ProfileActivity extends AppCompatActivity {
         mMediaRV.setAdapter(mMediaAdapter);
         mMediaRV.setHasFixedSize(true);
 
-        Uri uri = getIntent().getData();
 
-        if(uri!=null){
-            mProfileViewModel.getAccessToken(uri.getQueryParameter("code"));
+        Bundle extras = getIntent().getExtras();
+
+        if(extras!=null){
+            String token = extras.getString(TOKEN);
+            mProfileViewModel.getAccessToken(token);
         }
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file),MODE_PRIVATE);

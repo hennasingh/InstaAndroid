@@ -45,11 +45,13 @@ public class LoginActivity extends AppCompatActivity implements AuthenticationLi
     }
 
     @Override
-    public void onTokenReceived(String accessToken) {
+    public void onTokenReceived(String code) {
 
-        if(accessToken!=null){
+        if(code!=null){
             mAuthenticationDialog.dismiss();
-
+            Intent intent = ProfileActivity.getIntent(this,code);
+            startActivity(intent);
         }
+
     }
 }
