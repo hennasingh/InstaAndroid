@@ -12,4 +12,4 @@ Use Chrome browser when app prompts to open Instagram.
 To implement more features
 - [ ] Using Instagram Graph API
 - [x] Using WebView (The code is in separate webView branch)
-- [ ] To remove cookies, so that Instagram login is asked again
+- [x] To remove cookies, so that Instagram login is asked again (works with using webview)
